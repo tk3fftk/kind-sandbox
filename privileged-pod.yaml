@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: privileged
+  name: privileged
+  namespace: my-baseline-namespace
+spec:
+  containers:
+  - image: nginx
+    name: privileged
+    securityContext:
+     privileged: true
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
